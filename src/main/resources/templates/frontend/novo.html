@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="author" content="Breno Marques Lomasso Costa"/>
+	</head>
+	<body>
+		<section layout:fragment="content">
+			<h3>Adicionar novo veículo no sistema</h3>
+			<form method="POST" action="#" id="formulario-cadastro" th:action="@{veiculo/salvarVeiculo}" th:object="${veiculo}">
+				<label for="Placa">Placa:</label> <input type="text" name="placa" size="5"></input><br />  
+				<label for="Renavam">Renavam:</label> <input type="number" name="renavam" size="11"></input><br />
+				<label for="Modelo">Modelo:</label> <input type="text" name="modelo" size="50"></input><br />
+				<label for="Marca">Marca:</label> <input type="text" name="marca" size="50"></input><br />
+				<label for="Ano">Ano:</label> <input type="number" name="ano" size="4"></input><br />
+				<br /> <input type="submit"></input>
+			</form>
+		</section>
+	</body>
+</html>
