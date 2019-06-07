@@ -1,0 +1,55 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #veiculoForm="ngForm">
+      <div class="form-group">
+        <label for="placa">Placa</label>
+        <input type="text" maxlength="7" [(ngModel)]="veiculo.placa" 
+          class="form-control" id="placa" name="placa" placeholder="Digite a placa"
+          required #placa="ngModel">
+		<div [hidden]="!placa.pristine" class="alert alert-danger">Digite a Placa do Veículo!</div>
+      </div>
+	  
+	  <div class="form-group">
+        <label for="chassi">Chassi</label>
+        <input type="text" maxlength="17" [(ngModel)]="veiculo.chassi" 
+          class="form-control" id="chassi" name="chassi" placeholder="Digite o Chassi"
+          required #chassi="ngModel">
+        <div [hidden]="!chassi.pristine" class="alert alert-danger">Digite o Chassi do Veículo!</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="renavam">Renavam</label>
+        <input type="text" maxlength="11" [(ngModel)]="veiculo.renavam" 
+          class="form-control" id="renavam" name="renavam" placeholder="Digite o renavam"
+          required #renavam="ngModel">
+        <div [hidden]="!renavam.pristine" class="alert alert-danger">Digite o Renavam do Veículo!</div>
+      </div>
+	  
+	  <div class="form-group">
+        <label for="modelo">Modelo</label>
+        <input type="text" maxlength="255" [(ngModel)]="veiculo.modelo" 
+          class="form-control" id="modelo" name="modelo" placeholder="Digite o modelo"
+          required #modelo="ngModel">
+        <div [hidden]="!modelo.pristine" class="alert alert-danger">Digite o Modelo do Veículo!</div>
+      </div>
+	  
+	  <div class="form-group">
+        <label for="marca">Marca</label>
+        <input type="text" maxlength="255" [(ngModel)]="veiculo.marca" 
+          class="form-control" id="marca" name="marca" placeholder="Digite a marca"
+          required #marca="ngModel">
+        <div [hidden]="!marca.pristine" class="alert alert-danger">Digite a Marca do Veículo!</div>
+      </div>
+	  
+	  <div class="form-group">
+        <label for="ano">Ano</label>
+        <input type="text" maxlength="4" [(ngModel)]="veiculo.ano" 
+          class="form-control" id="ano" name="ano" placeholder="Digite o ano"
+          required #ano="ngModel">
+        <div [hidden]="!ano.pristine" class="alert alert-danger">Digite o Ano do Veículo!</div>
+      </div>
+	  
+      <button type="submit" [disabled]="!veiculoForm.form.valid" class="btn btn-info">Salvar</button>
+    </form>
+  </div>
+</div>
