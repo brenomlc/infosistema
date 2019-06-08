@@ -11,6 +11,12 @@ export class VeiculoService {
   constructor(private http: HttpClient) {
     this.veiculoUrl = 'http://localhost:8080/veiculo';
   }
+
+  public find(id: number): Observable<Veiculo> {
+    const getByIdUrl = `${this.veiculoUrl}/${id}`;
+
+    return this.http.get<Veiculo>(getByIdUrl);
+  }
  
   public findAll(): Observable<Veiculo[]> {
     return this.http.get<Veiculo[]>(this.veiculoUrl);
@@ -20,7 +26,13 @@ export class VeiculoService {
     return this.http.post<Veiculo>(this.veiculoUrl, veiculo);
   }
 
-  public remove(id : string){
-    return this.http.delete(this.veiculoUrl,id);
+  public remove(veiculo: Veiculo) {
+    const deleteUrl = `${this.veiculoUrl}/${veiculo.id}`;
+
+    return this.http.delete(deleteUrl);
+  }
+
+  public update(veiculo: Veiculo) {
+    return this.http.put<Veiculo>(this.veiculoUrl, veiculo);
   }
 }

@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { VeiculoListComponent } from './veiculo-list/veiculo-list.component';
 import { VeiculoFormComponent } from './veiculo-form/veiculo-form.component';
 import { VeiculoService } from './service/veiculo-service.service';
+import { VeiculoEditComponent } from './veiculo-edit/veiculo-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VeiculoListComponent,
-    VeiculoFormComponent
+    VeiculoFormComponent,
+    VeiculoEditComponent
   ],
   imports: [
     BrowserModule,

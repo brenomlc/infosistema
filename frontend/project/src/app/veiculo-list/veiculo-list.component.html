@@ -23,9 +23,9 @@
     		  <td>{{ veiculo.marca }}</td>
     		  <td>{{ veiculo.ano }}</td>
           <td>
-            <a routerLink="/veiculo/{{ veiculo.id }}" class="btn btn-info">Editar</a>
+            <button (click)="editarVeiculo(veiculo)" class="btn btn-info">Editar</button>
             -
-            <a routerLink="/remover/{{ veiculo.id }}" class="btn btn-info">Remover</a>
+            <button (click)="removerVeiculo(veiculo)" class="btn">Remover</button>
           </td>
         </tr>
       </tbody>
